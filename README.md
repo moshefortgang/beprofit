@@ -13,3 +13,6 @@ return [
 ];
 ?>
 ```
+
+You can also use with the docker compose 
+run docker-compose up -d
