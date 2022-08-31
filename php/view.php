@@ -6,8 +6,8 @@ $dbpass = 'my_secret_pw_shh';
 $dbname = 'test_db';
 $db = new db( $dbhost, $dbuser, $dbpass, $dbname );
 
-$netSales = $db->query( "SELECT SUM(`total_price`) AS total_price FROM `test_db` WHERE financial_status IN ('paid', 'partially_paid')" )->fetchArray();
-$productionCosts = $db->query( "SELECT SUM(`total_production_cost`) AS total_production_cost FROM `test_db` WHERE financial_status IN ('paid', 'partially_paid') AND fulfillment_status = 'fulfilled'" )->fetchArray();
+$netSales = $db->query( "SELECT SUM(`total_price`) AS total_price FROM `data` WHERE financial_status IN ('paid', 'partially_paid')" )->fetchArray();
+$productionCosts = $db->query( "SELECT SUM(`total_production_cost`) AS total_production_cost FROM `data` WHERE financial_status IN ('paid', 'partially_paid') AND fulfillment_status = 'fulfilled'" )->fetchArray();
 $grossProfit = $netSales["total_price"] - $productionCosts["total_production_cost"];
 
 ?>
